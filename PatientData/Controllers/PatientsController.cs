@@ -4,12 +4,14 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using PatientData.Models;
 
 namespace PatientData.Controllers
 {
+    [EnableCors("*", "*", "GET")]
     public class PatientsController : ApiController
     {
         private MongoCollection<Patient> _patients;
