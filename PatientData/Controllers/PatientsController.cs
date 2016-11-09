@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using System.Web.Http.Cors;
-using MongoDB.Bson;
+﻿using MongoDB.Bson;
 using MongoDB.Driver;
 using PatientData.Models;
+using System.Collections.Generic;
+using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace PatientData.Controllers
 {
     [EnableCors("*", "*", "GET")]
+    [Authorize]
     public class PatientsController : ApiController
     {
         private MongoCollection<Patient> _patients;
